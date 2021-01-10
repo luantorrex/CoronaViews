@@ -1,14 +1,20 @@
 from app import app
 from app.covid_data import (
     get_covid_data, 
-    get_covid_daily_data)
+    get_covid_daily_data
+    )
+
 
 @app.route('/')
 def index():
     
     output_phrase = 'Welcome to CoronaViews, <br><br>' + \
     'General numbers per country: <br>' + \
-    'I.E.: <b> http://127.0.0.1:5000/usa </b> <br>' + \
+    'I.E.: <b> http://127.0.0.1:5000/country/usa</b><br>'+ \
+    '(Confirmed cases, Recovered people & Deaths).' + \
+    '<br><br>' + \
+    'General daily cases per country: <br>' + \
+    'I.E.: <b> http://127.0.0.1:5000/daily/usa/01-01-2021</b><br>' + \
     '(Confirmed cases, Recovered people & Deaths).'
 
     return output_phrase
